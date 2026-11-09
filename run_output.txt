@@ -1,0 +1,49 @@
+Analysing 200 posts
+
+=== POS TAGGING (first tweet) ===
+ tweet_id    token pos_universal pos_fine    lemma
+        1  @united           ADJ       JJ  @united
+        1 cleaning          VERB      VBG    clean
+        1        a           DET       DT        a
+        1 regional           ADJ       JJ regional
+        1      jet          NOUN       NN      jet
+        1    takes          VERB      VBZ     take
+        1       an           DET       DT       an
+        1     hour          NOUN       NN     hour
+        1        ?         PUNCT        .        ?
+
+=== DEPENDENCY PARSING (first tweet) ===
+ tweet_id    token dependency     head head_pos       children
+        1  @united      nsubj    takes     VERB       cleaning
+        1 cleaning        acl  @united      ADJ            jet
+        1        a        det      jet     NOUN               
+        1 regional       amod      jet     NOUN               
+        1      jet       dobj cleaning     VERB     a regional
+        1    takes       ROOT    takes     VERB @united hour ?
+        1       an        det     hour     NOUN               
+        1     hour       dobj    takes     VERB             an
+        1        ?      punct    takes     VERB               
+
+=== SENTENCE STRUCTURE (subject / verb / object) ===
+ tweet_id root_verb       subjects                  objects                                                            noun_phrases
+        1     takes        @united                jet, hour                                                a regional jet | an hour
+        2   delayed         Flight                    hours                                                       Flight | 14 hours
+        2      tell        one, he counter, husband, flight      No one | #AmericanAirlines counter | my husband | he | that flight
+        2      Help                                                                                                                
+        3        am   I, inability  air, delays.handling, # I | us air | their inability | weather delays.handling | # | an example
+        4  @JetBlue                                  course                                                                  course
+        5        is UA1740, all, I                                                                         @united UA1740 | all | I
+        5     tweet              I                 trip, UA                                                      I | next trip | UA
+
+=== MOST COMMON POS TAGS ===
+[('NOUN', 775), ('VERB', 507), ('PUNCT', 471), ('PRON', 425), ('ADP', 379), ('PROPN', 311), ('AUX', 273), ('ADJ', 234)]
+
+Diagram tweets: #1 and #6 (see dep_tree_*.svg)
+
+=== CHALLENGE DEMO: informal vs standard wording ===
+[informal] u/PRON r/AUX gon/VERB na/ADP luv/NOUN this/DET new/ADJ song/NOUN
+[standard] You/PRON are/AUX going/VERB to/PART love/VERB this/DET new/ADJ song/NOUN
+
+[informal] omg/ADP the/DET exam/NOUN was/AUX sooo/NOUN hard/ADV
+[standard] Oh/INTJ my/INTJ god/PROPN ,/PUNCT the/DET exam/NOUN was/AUX so/ADV hard/ADJ
+
